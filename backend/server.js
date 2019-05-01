@@ -19,7 +19,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
 // connects our back end code with the database
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
-let db = mongoose.connection;
+mongoose.Promise = Promise;
+
+// let db = mongoose.connection;
 
 db.once("open", () => console.log("connected to the database"));
 
