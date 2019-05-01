@@ -7,15 +7,7 @@ const Schema = mongoose.Schema;
 const DataSchema = new Schema(
   {
     id: Number,
-    jobName: String,
-    companyName: String,
-    role: String,
-    createdAt: {
-        type: Date, 
-        default: Date.now
-    },
-    status: String,
-    isActive: Boolean,
+    message: String
   },
   { timestamps: true }
 );

@@ -11,17 +11,18 @@ const app = express();
 app.use(cors());
 const router = express.Router();
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mern-test";
 
 // this is our MongoDB database
 // const dbRoute = "mongodb://heroku_3l6mdcgn:hcd382l9fdo435ghegdt3v2p43@ds149806.mlab.com:49806/heroku_3l6mdcgn";
 
 // connects our back end code with the database
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
+mongoose.connect(
+  MONGODB_URI,
+  { useNewUrlParser: true }
+);
 
-mongoose.Promise = Promise;
-
-// let db = mongoose.connection;
+let db = mongoose.connection;
 
 db.once("open", () => console.log("connected to the database"));
 
