@@ -1,0 +1,23 @@
+{
+  "name": "mern_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehager77/mern_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehager77/mern_test/issues"
+  },
+  "homepage": "https://github.com/ehager77/mern_test#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

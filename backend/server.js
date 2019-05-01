@@ -4,21 +4,20 @@ const express = require("express");
 var cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-const Data = require("./data");
+const Data = require("./models/job");
 
 const API_PORT = 3001;
 const app = express();
 app.use(cors());
 const router = express.Router();
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news-scraper";
+
 // this is our MongoDB database
-const dbRoute = "mongodb://jelo:a9bc839993@ds151382.mlab.com:51382/jelotest";
+// const dbRoute = "mongodb://heroku_3l6mdcgn:hcd382l9fdo435ghegdt3v2p43@ds149806.mlab.com:49806/heroku_3l6mdcgn";
 
 // connects our back end code with the database
-mongoose.connect(
-  dbRoute,
-  { useNewUrlParser: true }
-);
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 let db = mongoose.connection;
 
